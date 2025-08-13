@@ -12,7 +12,7 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen text-foreground relative overflow-hidden">
+    <div className="text-foreground relative min-h-screen overflow-hidden">
       <Navigation scrollToSection={scrollToSection} />
       <HeroSection scrollToSection={scrollToSection} />
       <WorkSection />

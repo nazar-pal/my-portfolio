@@ -21,7 +21,7 @@ export function BackToTop() {
   return (
     <Button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className="fixed bottom-8 right-8 btn-primary p-3 rounded-full shadow-lg animate-pulse-glow z-50"
+      className="btn-primary animate-pulse-glow fixed right-8 bottom-8 z-50 rounded-full p-3 shadow-lg"
       aria-label="Back to top"
     >
       <ChevronUp size={24} />

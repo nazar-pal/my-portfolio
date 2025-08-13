@@ -42,12 +42,12 @@ export function ProjectCard({
     <Card
       className={`project-card ${
         index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-      } flex flex-col md:flex overflow-hidden animate-fade-in-scale`}
+      } animate-fade-in-scale flex flex-col overflow-hidden md:flex`}
       style={{ animationDelay: `${index * 0.2}s` }}
     >
-      <CardContent className="p-8 flex-1">
-        <div className="flex items-center gap-3 mb-4">
-          <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+      <CardContent className="flex-1 p-8">
+        <div className="mb-4 flex items-center gap-3">
+          <h3 className="text-foreground font-serif text-2xl font-bold md:text-3xl">
             {title}
           </h3>
           <Badge
@@ -62,7 +62,7 @@ export function ProjectCard({
           </Badge>
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="mb-4 flex flex-wrap gap-2">
           {badges.map(badge => (
             <Badge
               key={badge}
@@ -78,11 +78,11 @@ export function ProjectCard({
           {description}
         </p>
 
-        <p className="text-muted-foreground/80 text-sm mb-6 leading-relaxed">
+        <p className="text-muted-foreground/80 mb-6 text-sm leading-relaxed">
           {details}
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="mb-6 flex flex-wrap gap-2">
           {(isExpanded ? tech : tech.slice(0, 8)).map(techItem => (
             <Badge key={techItem} className="tech-badge">
               {techItem}
@@ -101,7 +101,7 @@ export function ProjectCard({
         {link && (
           <Button
             asChild
-            className="btn-primary transition-all duration-300 hover-lift"
+            className="btn-primary hover-lift transition-all duration-300"
           >
             <a href={link} target="_blank" rel="noopener noreferrer">
               Visit Site
@@ -111,19 +111,19 @@ export function ProjectCard({
         )}
       </CardContent>
 
-      <div className="flex-1 min-h-[300px] bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center p-4">
+      <div className="from-primary/10 to-primary/5 flex min-h-[300px] flex-1 items-center justify-center bg-gradient-to-br p-4">
         <div
-          className={`relative hover-lift ${
+          className={`hover-lift relative ${
             type === 'mobile'
-              ? 'w-[70%] h-full max-h-[400px]'
-              : 'w-full h-full max-w-md'
+              ? 'h-full max-h-[400px] w-[70%]'
+              : 'h-full w-full max-w-md'
           }`}
         >
           <Image
             src={image}
             alt={`${title} screenshot`}
             fill
-            className="object-contain rounded-lg shadow-lg"
+            className="rounded-lg object-contain shadow-lg"
           />
         </div>
       </div>

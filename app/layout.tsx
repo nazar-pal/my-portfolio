@@ -1,3 +1,4 @@
+import { env } from '@/env'
 import type { Metadata, Viewport } from 'next'
 import { DM_Sans, Space_Grotesk } from 'next/font/google'
 import Script from 'next/script'
@@ -16,8 +17,7 @@ const dmSans = DM_Sans({
   variable: '--font-dm-sans'
 })
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://nazar-palamarchuk.com'
+const siteUrl = env.NEXT_PUBLIC_SITE_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -39,9 +39,7 @@ export const metadata: Metadata = {
     'Web Development',
     'Mobile Development'
   ],
-  authors: [
-    { name: 'Nazar Palamarchuk', url: 'https://linkedin.com/in/naz-pal' }
-  ],
+  authors: [{ name: 'Nazar Palamarchuk', url: env.NEXT_PUBLIC_LINKEDIN_URL }],
   creator: 'Nazar Palamarchuk',
   publisher: 'Nazar Palamarchuk',
   applicationName: 'Nazar Palamarchuk Portfolio',
@@ -96,7 +94,7 @@ export default function RootLayout({
     name: 'Nazar Palamarchuk',
     url: siteUrl,
     image: `${siteUrl}/images/nazar-profile.jpg`,
-    sameAs: ['https://github.com/nazar-pal', 'https://linkedin.com/in/naz-pal'],
+    sameAs: [env.NEXT_PUBLIC_GITHUB_URL, env.NEXT_PUBLIC_LINKEDIN_URL],
     jobTitle: 'Full Stack Developer',
     address: {
       '@type': 'PostalAddress',
@@ -128,10 +126,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${dmSans.variable} antialiased dark`}
+      className={`${spaceGrotesk.variable} ${dmSans.variable} dark antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-background">
+      <body className="bg-background min-h-screen">
         {children}
         <Script
           id="ld-json-person"

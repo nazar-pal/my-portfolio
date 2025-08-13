@@ -1,7 +1,12 @@
 import type { NextConfig } from 'next'
+import './env.ts'
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    // dynamicIO: true,
+    // ppr: 'incremental',
+    reactCompiler: true
+  }
 }
 
 export default nextConfig

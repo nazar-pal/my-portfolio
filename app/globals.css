@@ -166,7 +166,8 @@ html {
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 40px oklch(0.65 0.25 264 / 0.6),
+    box-shadow:
+      0 0 40px oklch(0.65 0.25 264 / 0.6),
       0 0 60px oklch(0.65 0.25 264 / 0.3);
     transform: scale(1.02);
   }
@@ -274,7 +275,8 @@ html {
 
 .hover-lift:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px oklch(0.08 0.02 264 / 0.4),
+  box-shadow:
+    0 25px 50px oklch(0.08 0.02 264 / 0.4),
     0 0 0 1px oklch(0.65 0.25 264 / 0.1);
 }
 
@@ -362,7 +364,8 @@ html {
 .project-card:hover {
   transform: translateY(-5px);
   border-color: oklch(0.65 0.25 264 / 0.5);
-  box-shadow: 0 20px 40px oklch(0.08 0.02 264 / 0.3),
+  box-shadow:
+    0 20px 40px oklch(0.08 0.02 264 / 0.3),
     0 0 0 1px oklch(0.65 0.25 264 / 0.1);
 }
 

@@ -35,17 +35,17 @@ export function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 gradient-text">
+    <section id="about" className="relative py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="gradient-text mb-4 font-serif text-4xl font-bold md:text-5xl">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full animate-shimmer" />
+          <div className="bg-primary animate-shimmer mx-auto h-1 w-24 rounded-full" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 text-muted-foreground leading-relaxed">
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <div className="text-muted-foreground space-y-6 leading-relaxed">
             <p className="text-lg">
               I&apos;m a{' '}
               <strong className="text-foreground">
@@ -97,14 +97,14 @@ export function AboutSection() {
 
           <div className="flex justify-center">
             <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary to-primary/60 p-1 animate-pulse-glow hover-lift">
-                <div className="w-full h-full rounded-full overflow-hidden bg-card">
+              <div className="from-primary to-primary/60 animate-pulse-glow hover-lift h-80 w-80 rounded-full bg-gradient-to-br p-1">
+                <div className="bg-card h-full w-full overflow-hidden rounded-full">
                   <Image
                     src="/images/nazar-profile.jpg"
                     alt="Nazar Palamarchuk"
                     width={320}
                     height={320}
-                    className="w-full h-full object-cover"
+                    className="h-full w-full object-cover"
                   />
                 </div>
               </div>
@@ -112,7 +112,7 @@ export function AboutSection() {
                 {cvUrl && (
                   <Button
                     asChild
-                    className="btn-primary transition-all duration-300 hover-lift"
+                    className="btn-primary hover-lift transition-all duration-300"
                   >
                     <a href={cvUrl} target="_blank" rel="noopener noreferrer">
                       View CV

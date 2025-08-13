@@ -18,18 +18,18 @@ export function Navigation({ scrollToSection }: NavigationProps) {
   }
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <div className="font-serif text-2xl font-bold gradient-text">NP</div>
+    <nav className="glass fixed top-0 z-50 w-full">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-4">
+          <div className="gradient-text font-serif text-2xl font-bold">NP</div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden space-x-8 md:flex">
             {navItems.map(item => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="capitalize nav-link text-muted-foreground hover:text-foreground transition-colors duration-300"
+                className="nav-link text-muted-foreground hover:text-foreground capitalize transition-colors duration-300"
               >
                 {item}
               </button>
@@ -38,7 +38,7 @@ export function Navigation({ scrollToSection }: NavigationProps) {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-accent transition-colors duration-200"
+            className="hover:bg-accent rounded-lg p-2 transition-colors duration-200 md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -48,13 +48,13 @@ export function Navigation({ scrollToSection }: NavigationProps) {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden glass border-t border-border">
-          <div className="px-4 py-4 space-y-4">
+        <div className="glass border-border border-t md:hidden">
+          <div className="space-y-4 px-4 py-4">
             {navItems.map(item => (
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className="block w-full text-left capitalize text-muted-foreground hover:text-foreground transition-colors duration-300"
+                className="text-muted-foreground hover:text-foreground block w-full text-left capitalize transition-colors duration-300"
               >
                 {item}
               </button>

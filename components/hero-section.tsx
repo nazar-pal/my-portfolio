@@ -28,9 +28,9 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
   }, [])
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <div
-        className="fixed inset-0 opacity-30 pointer-events-none transition-all duration-1000 ease-out"
+        className="pointer-events-none fixed inset-0 opacity-30 transition-all duration-1000 ease-out"
         style={{
           background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, oklch(0.65 0.25 264 / 0.15), transparent 40%)`
         }}
@@ -45,11 +45,11 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <div className="animate-slide-in-up">
-          <div className="flex items-center justify-center mb-6">
+          <div className="mb-6 flex items-center justify-center">
             <Sparkles
-              className="text-primary mr-3 animate-bounce-subtle"
+              className="text-primary animate-bounce-subtle mr-3"
               size={32}
             />
             <span className="text-primary font-medium">
@@ -57,24 +57,24 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
             </span>
           </div>
 
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+          <h1 className="mb-6 font-serif text-5xl font-bold md:text-7xl lg:text-8xl">
             <span className="gradient-text">Nazar</span>
             <br />
             <span className="text-foreground">Palamarchuk</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-xl leading-relaxed md:text-2xl">
             Full Stack Web & Mobile Developer with AI Expertise
           </p>
 
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-8 text-lg">
             Lviv, Ukraine • Remote & Relocation Available
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               onClick={() => scrollToSection('contact')}
-              className="btn-primary px-8 py-3 rounded-full text-lg font-medium animate-pulse-glow"
+              className="btn-primary animate-pulse-glow rounded-full px-8 py-3 text-lg font-medium"
             >
               Get in touch
               <ArrowRight className="ml-2" size={20} />
@@ -82,7 +82,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
             <Button
               variant="outline"
               onClick={() => scrollToSection('work')}
-              className="border-border hover:bg-accent px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover-lift"
+              className="border-border hover:bg-accent hover-lift rounded-full px-8 py-3 text-lg font-medium transition-all duration-300"
             >
               View my work
             </Button>
@@ -91,19 +91,19 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
       </div>
 
       <div
-        className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full animate-float blur-sm"
+        className="bg-primary/20 animate-float absolute top-20 left-10 h-20 w-20 rounded-full blur-sm"
         style={{ animationDelay: '0s' }}
       />
       <div
-        className="absolute top-40 right-20 w-16 h-16 bg-primary/30 rounded-full animate-float blur-sm"
+        className="bg-primary/30 animate-float absolute top-40 right-20 h-16 w-16 rounded-full blur-sm"
         style={{ animationDelay: '2s' }}
       />
       <div
-        className="absolute bottom-40 left-20 w-12 h-12 bg-primary/25 rounded-full animate-float blur-sm"
+        className="bg-primary/25 animate-float absolute bottom-40 left-20 h-12 w-12 rounded-full blur-sm"
         style={{ animationDelay: '4s' }}
       />
       <div
-        className="absolute top-1/2 right-10 w-8 h-8 bg-primary/20 rounded-full animate-float blur-sm"
+        className="bg-primary/20 animate-float absolute top-1/2 right-10 h-8 w-8 rounded-full blur-sm"
         style={{ animationDelay: '1s' }}
       />
     </section>
