@@ -42,10 +42,6 @@ export function AboutSection() {
             About Me
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full animate-shimmer" />
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            As a senior full-stack developer, I merge technology with creativity
-            to deliver seamless user experiences
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
