@@ -10,7 +10,8 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  /* Brand-forward primary for light mode to match dark theme accent */
+  --primary: oklch(0.65 0.25 264);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -18,8 +19,9 @@
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
+  /* Ensure proper contrast for destructive in light mode */
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
@@ -126,21 +128,35 @@
   }
 }
 
-/* Enhanced scrollbar with new color scheme */
+/* Enhanced scrollbar with theme-aware color scheme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
+/* Light theme scrollbar */
 ::-webkit-scrollbar-track {
-  background: oklch(0.12 0.03 264);
+  background: oklch(0.97 0 0);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: oklch(0.65 0.25 264);
+  background: oklch(0.55 0.2 270);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.6 0.22 270);
+}
+
+/* Dark theme scrollbar overrides */
+.dark ::-webkit-scrollbar-track {
+  background: oklch(0.12 0.03 264);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: oklch(0.65 0.25 264);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
   background: oklch(0.7 0.3 264);
 }
 
@@ -261,9 +277,16 @@ html {
 }
 
 /* Enhanced glass morphism with better backdrop effects */
+/* Glassmorphism container - light by default, dark overridden */
 .glass {
-  background: oklch(0.12 0.03 264 / 0.8);
+  background: oklch(1 0 0 / 0.7);
   backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px oklch(0 0 0 / 0.08);
+}
+
+.dark .glass {
+  background: oklch(0.12 0.03 264 / 0.8);
   border: 1px solid oklch(0.2 0.05 264 / 0.3);
   box-shadow: 0 8px 32px oklch(0.08 0.02 264 / 0.3);
 }
@@ -275,6 +298,13 @@ html {
 
 .hover-lift:hover {
   transform: translateY(-8px) scale(1.02);
+  /* Softer shadows in light theme */
+  box-shadow:
+    0 20px 40px oklch(0 0 0 / 0.08),
+    0 0 0 1px oklch(0.65 0.25 264 / 0.12);
+}
+
+.dark .hover-lift:hover {
   box-shadow:
     0 25px 50px oklch(0.08 0.02 264 / 0.4),
     0 0 0 1px oklch(0.65 0.25 264 / 0.1);
@@ -337,13 +367,19 @@ html {
 }
 
 /* Enhanced project card styles */
+/* Project card - light by default, dark overridden */
 .project-card {
-  background: oklch(0.12 0.03 264 / 0.6);
+  background: oklch(1 0 0 / 0.7);
   backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid oklch(0.2 0.05 264 / 0.3);
+  border: 1px solid var(--border);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+}
+
+.dark .project-card {
+  background: oklch(0.12 0.03 264 / 0.6);
+  border: 1px solid oklch(0.2 0.05 264 / 0.3);
 }
 
 .project-card::before {
@@ -356,13 +392,20 @@ html {
   background: linear-gradient(
     90deg,
     transparent,
-    oklch(0.65 0.25 264 / 0.5),
+    oklch(0.65 0.25 264 / 0.35),
     transparent
   );
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+  border-color: oklch(0.65 0.25 264 / 0.25);
+  box-shadow:
+    0 20px 40px oklch(0 0 0 / 0.08),
+    0 0 0 1px oklch(0.65 0.25 264 / 0.08);
+}
+
+.dark .project-card:hover {
   border-color: oklch(0.65 0.25 264 / 0.5);
   box-shadow:
     0 20px 40px oklch(0.08 0.02 264 / 0.3),
@@ -370,16 +413,29 @@ html {
 }
 
 /* Enhanced tech badge styles */
+/* Technology badges - light by default, dark overridden */
 .tech-badge {
-  background: oklch(0.18 0.04 264 / 0.8);
-  color: oklch(0.8 0.1 264);
-  border: 1px solid oklch(0.3 0.1 264 / 0.3);
+  background: oklch(0.97 0.02 264 / 0.8);
+  color: oklch(0.27 0.06 264);
+  border: 1px solid oklch(0.9 0.03 264);
   transition: all 0.2s ease;
 }
 
 .tech-badge:hover {
+  background: oklch(0.92 0.03 264);
+  color: oklch(0.2 0.05 264);
+  border-color: oklch(0.75 0.06 264);
+  transform: translateY(-1px);
+}
+
+.dark .tech-badge {
+  background: oklch(0.18 0.04 264 / 0.8);
+  color: oklch(0.8 0.1 264);
+  border: 1px solid oklch(0.3 0.1 264 / 0.3);
+}
+
+.dark .tech-badge:hover {
   background: oklch(0.65 0.25 264 / 0.2);
   color: oklch(0.95 0.01 264);
   border-color: oklch(0.65 0.25 264 / 0.5);
-  transform: translateY(-1px);
 }
