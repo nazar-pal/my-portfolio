@@ -3,6 +3,7 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { env } from '@/env'
 import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -98,6 +99,11 @@ export function ProjectCard({
           )}
         </div>
 
+        {/* Full technology list present in DOM for LLMs and assistive tech */}
+        <div className="sr-only">
+          <p>Technologies used: {tech.join(', ')}</p>
+        </div>
+
         {link && (
           <Button
             asChild
@@ -127,6 +133,39 @@ export function ProjectCard({
           />
         </div>
       </div>
+
+      {/* Per-project JSON-LD to help LLMs and search engines */}
+      {(() => {
+        const siteUrl = env.NEXT_PUBLIC_SITE_URL
+        const imageUrl = `${siteUrl}${image}`
+        const keywords = Array.from(
+          new Set([...(tech || []), ...(badges || [])])
+        )
+        const category =
+          type === 'mobile' ? 'MobileApplication' : 'WebApplication'
+        const projectLd = {
+          '@context': 'https://schema.org',
+          '@type': 'SoftwareApplication',
+          name: title,
+          description,
+          applicationCategory: category,
+          operatingSystem: type === 'mobile' ? 'iOS, Android' : 'Any',
+          image: imageUrl,
+          author: {
+            '@type': 'Person',
+            name: 'Nazar Palamarchuk',
+            url: siteUrl
+          },
+          keywords: keywords.join(', '),
+          ...(link ? { url: link } : {})
+        }
+        return (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(projectLd) }}
+          />
+        )
+      })()}
     </Card>
   )
 }

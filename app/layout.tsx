@@ -46,6 +46,9 @@ export const metadata: Metadata = {
   applicationName: 'Nazar Palamarchuk Portfolio',
   referrer: 'strict-origin-when-cross-origin',
   alternates: { canonical: '/' },
+  other: {
+    'link:alternate': [`${siteUrl}/cv.json`, `${siteUrl}/cv.pdf`]
+  },
   category: 'technology',
   openGraph: {
     title: 'Nazar Palamarchuk | Full Stack Developer',
@@ -135,10 +138,22 @@ export default function RootLayout({
     name: 'Nazar Palamarchuk | Full Stack Developer',
     url: siteUrl,
     inLanguage: 'en',
-    potentialAction: {
-      '@type': 'ContactAction',
-      target: [`${siteUrl}/#contact`]
-    }
+    potentialAction: [
+      {
+        '@type': 'ViewAction',
+        target: [`${siteUrl}/cv.json`],
+        name: 'View CV (JSON)'
+      },
+      {
+        '@type': 'ViewAction',
+        target: [`${siteUrl}/cv.pdf`],
+        name: 'View CV (PDF)'
+      },
+      {
+        '@type': 'ContactAction',
+        target: [`${siteUrl}/#contact`]
+      }
+    ]
   }
 
   return (

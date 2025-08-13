@@ -26,4 +26,3 @@ Project structure
 Notes
 
 - Dark theme is default via the `dark` class on `<html>`.
-- Resume link is intentionally removed until `public/Resume.pdf` is added.

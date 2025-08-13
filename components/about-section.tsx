@@ -16,8 +16,8 @@ export function AboutSection() {
         if (!cancelled && cv.ok) return setCvUrl('/CV.pdf')
       } catch {}
       try {
-        const resume = await fetch('/Resume.pdf', { method: 'HEAD' })
-        if (!cancelled && resume.ok) return setCvUrl('/Resume.pdf')
+        const cv = await fetch('/CV.json', { method: 'HEAD' })
+        if (!cancelled && cv.ok) return setCvUrl('/CV.json')
       } catch {}
       if (!cancelled) setCvUrl(null)
     }

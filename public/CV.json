@@ -1,0 +1,239 @@
+{
+  "basics": {
+    "name": "Nazar Palamarchuk",
+    "label": "Full Stack Web & Mobile Developer with AI Expertise",
+    "location": {
+      "city": "Lviv",
+      "countryCode": "UA"
+    },
+    "availability": "Relocation / Remote possible",
+    "email": "ua.nazar.palamarchuk.ua@gmail.com",
+    "phone": "+380-97-332-82-10",
+    "url": "https://nazar-palamarchuk.netlify.app",
+    "profiles": [
+      { "network": "GitHub", "url": "https://github.com/nazar-pal" },
+      { "network": "LinkedIn", "url": "https://linkedin.com/in/naz-pal" },
+      { "network": "Website", "url": "https://nazar-palamarchuk.netlify.app" }
+    ],
+    "summary": "Full‑stack SaaS experience — from MVP to production deployment. TypeScript‑first approach — designing type‑safe architectures across all projects. AI‑powered feature integration in mobile and web apps. Global engineering experience working with international teams at Boeing.",
+    "coreHighlights": [
+      "Full‑stack SaaS experience — from MVP to production deployment.",
+      "TypeScript‑first approach — designing type‑safe architectures across all projects.",
+      "AI‑powered feature integration in mobile and web apps.",
+      "Global engineering experience working with international teams at Boeing."
+    ]
+  },
+  "work": [
+    {
+      "name": "Breadly",
+      "position": "Founder & Solo Developer",
+      "location": "Remote",
+      "summary": "SaaS mobile app for tracking budgets and expenses with a unique AI‑powered receipt scanning and voice expense entry system. Automatically categorizes expenses from long receipts, saving significant manual effort. Preparing for early adopter release.",
+      "highlights": [
+        "Designed local‑first data model with sync for resilient offline usage",
+        "Implemented AI‑powered OCR pipeline and voice entry",
+        "Structured TypeScript‑first codebase across app and services"
+      ],
+      "technologies": [
+        "Expo",
+        "Expo Router",
+        "Expo API Routes",
+        "React Native",
+        "tRPC",
+        "Zod",
+        "TanStack Query",
+        "Drizzle ORM",
+        "PostgreSQL",
+        "SQLite",
+        "PowerSync",
+        "Clerk",
+        "AI SDK",
+        "RevenueCat",
+        "Paddle",
+        "TypeScript"
+      ],
+      "status": "In Development"
+    },
+    {
+      "name": "TimeCraft",
+      "position": "Full‑Stack Developer",
+      "location": "Remote",
+      "startDate": "2025-02",
+      "summary": "Fully functional SaaS for tracking work time and measuring performance. Actively used daily by a group of beta testers, providing insights into time distribution across projects. Supports Ukrainian, Russian, and English. Preparing to integrate payments.",
+      "highlights": [
+        "Built MVP with server components and server actions",
+        "Implemented multi‑language support (UA/RU/EN)",
+        "Prepared architecture for subscription billing"
+      ],
+      "technologies": [
+        "React 19",
+        "Next.js 15",
+        "App Router",
+        "Route Handlers",
+        "Server Actions",
+        "Server Components",
+        "PPR",
+        "TanStack Query",
+        "TanStack Tables",
+        "TailwindCSS",
+        "Shadcn",
+        "PostgreSQL",
+        "Drizzle",
+        "Clerk",
+        "TypeScript",
+        "Zod"
+      ],
+      "status": "Live",
+      "url": "https://timecraftapp.com"
+    },
+    {
+      "name": "Workineuro",
+      "position": "Full‑Stack Developer (Freelance)",
+      "location": "Remote",
+      "startDate": "2024-07",
+      "summary": "Platform helping Ukrainians find employment in the EU, with a custom CMS, static generation, and rebuild automation. Deep Telegram integration: admin panel postings auto‑publish to a channel; applications trigger instant notifications.",
+      "highlights": [
+        "Automated Telegram job announcements from CMS",
+        "Reduced admin posting time via workflow automation",
+        "Implemented SSR/SSG for fast content delivery"
+      ],
+      "technologies": [
+        "React 19",
+        "Next.js 15",
+        "App Router",
+        "Server Actions",
+        "SSR",
+        "SSG",
+        "TanStack Query",
+        "TanStack Tables",
+        "TailwindCSS",
+        "Shadcn",
+        "MongoDB",
+        "Mongoose",
+        "Clerk",
+        "TypeScript"
+      ],
+      "status": "Live",
+      "url": "https://workineuro.com"
+    },
+    {
+      "name": "Boeing",
+      "position": "Stress Analyst",
+      "location": "Kyiv, Remote",
+      "startDate": "2021-04",
+      "summary": "Stress engineer working on 737 NG and 737 MAX wing and empennage structures in an international team of ~50 engineers from Poland, India, the United States, and Australia, supporting clients worldwide.",
+      "highlights": [
+        "Trained 2 new engineers in calculation methods and internal tools.",
+        "Produced hundreds of detailed repair plans for customers.",
+        "Ranked 3rd in the team for number of jobs completed in 2023.",
+        "Gained strong presentation, communication, and collaboration skills while delivering high‑quality work under tight deadlines."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Shadcn",
+        "TanStack Query",
+        "TanStack Tables",
+        "PPR",
+        "App Router"
+      ]
+    },
+    {
+      "name": "Mobile",
+      "keywords": ["React Native", "Expo", "Expo Router", "PowerSync"]
+    },
+    {
+      "name": "Backend",
+      "keywords": [
+        "Node.js",
+        "Express.js",
+        "Fastify",
+        "tRPC",
+        "Server Actions",
+        "PostgreSQL",
+        "MongoDB",
+        "Drizzle",
+        "Mongoose",
+        "Zod"
+      ]
+    },
+    {
+      "name": "Data & ORM",
+      "keywords": ["PostgreSQL", "SQLite", "MongoDB", "Drizzle ORM", "Mongoose"]
+    },
+    {
+      "name": "State & Data Fetching",
+      "keywords": [
+        "Zustand",
+        "Redux",
+        "React Context",
+        "TanStack Query (React Query)",
+        "TanStack Table",
+        "React Hook Form"
+      ]
+    },
+    {
+      "name": "Auth",
+      "keywords": ["Clerk", "Auth0", "Superbase Auth", "JWT"]
+    },
+    {
+      "name": "UI",
+      "keywords": ["Tailwind CSS", "shadcn/ui", "Material UI"]
+    },
+    {
+      "name": "Payments & Subscriptions",
+      "keywords": ["Paddle", "RevenueCat"]
+    },
+    {
+      "name": "AI / LLM",
+      "keywords": ["Vercel AI SDK"]
+    },
+    {
+      "name": "Sync / Local‑first",
+      "keywords": ["PowerSync"]
+    },
+    {
+      "name": "Monitoring & Analytics",
+      "keywords": ["Sentry", "PostHog"]
+    },
+    {
+      "name": "File Storage & Uploads",
+      "keywords": ["Supabase Storage", "UploadThing"]
+    },
+    {
+      "name": "Hosting & CI/CD",
+      "keywords": ["Vercel", "Expo EAS Build"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "National Technical University of Ukraine — “Igor Sikorsky Kyiv Polytechnic Institute”",
+      "area": "Mechanical Engineering",
+      "studyType": "Bachelor",
+      "startDate": "2017-09",
+      "endDate": "2021-06"
+    }
+  ],
+  "languagesSpoken": [
+    { "language": "Ukrainian", "fluency": "Native" },
+    { "language": "Russian", "fluency": "Native/Bilingual" },
+    { "language": "English", "fluency": "B2 Upper Intermediate" },
+    { "language": "Spanish", "fluency": "A1 Beginner" }
+  ],
+  "interests": [
+    "Football",
+    "Volleyball",
+    "Tennis",
+    "Hiking",
+    "Skiing",
+    "Diving",
+    "Travel"
+  ]
+}
