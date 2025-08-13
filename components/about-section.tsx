@@ -1,7 +1,31 @@
+'use client'
+
 import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export function AboutSection() {
+  const [cvUrl, setCvUrl] = useState<string | null>(null)
+  useEffect(() => {
+    let cancelled = false
+    const probe = async () => {
+      try {
+        const cv = await fetch('/CV.pdf', { method: 'HEAD' })
+        if (!cancelled && cv.ok) return setCvUrl('/CV.pdf')
+      } catch {}
+      try {
+        const resume = await fetch('/Resume.pdf', { method: 'HEAD' })
+        if (!cancelled && resume.ok) return setCvUrl('/Resume.pdf')
+      } catch {}
+      if (!cancelled) setCvUrl(null)
+    }
+    probe()
+    return () => {
+      cancelled = true
+    }
+  }, [])
   const skills = [
     'TypeScript',
     'React/Next.js',
@@ -87,6 +111,19 @@ export function AboutSection() {
                     className="w-full h-full object-cover"
                   />
                 </div>
+              </div>
+              <div className="mt-6 text-center">
+                {cvUrl && (
+                  <Button
+                    asChild
+                    className="btn-primary transition-all duration-300 hover-lift"
+                  >
+                    <a href={cvUrl} target="_blank" rel="noopener noreferrer">
+                      View CV
+                      <ExternalLink className="ml-2" size={16} />
+                    </a>
+                  </Button>
+                )}
               </div>
             </div>
           </div>
