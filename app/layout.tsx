@@ -112,7 +112,7 @@ export default function RootLayout({
     '@type': 'Person',
     name: 'Nazar Palamarchuk',
     url: siteUrl,
-    image: `${siteUrl}/images/nazar-profile.jpg`,
+    image: `${siteUrl}/images/nazar-profile.webp`,
     sameAs: [env.NEXT_PUBLIC_GITHUB_URL, env.NEXT_PUBLIC_LINKEDIN_URL],
     email: `mailto:${env.NEXT_PUBLIC_CONTACT_EMAIL}`,
     telephone: env.NEXT_PUBLIC_CONTACT_PHONE_E164,

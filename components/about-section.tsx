@@ -100,7 +100,7 @@ export function AboutSection() {
               <div className="from-primary to-primary/60 animate-pulse-glow hover-lift h-80 w-80 rounded-full bg-gradient-to-br p-1">
                 <div className="bg-card h-full w-full overflow-hidden rounded-full">
                   <Image
-                    src="/images/nazar-profile.jpg"
+                    src="/images/nazar-profile.webp"
                     alt="Nazar Palamarchuk"
                     width={320}
                     height={320}
