@@ -9,11 +9,11 @@
     "availability": "Relocation / Remote possible",
     "email": "ua.nazar.palamarchuk.ua@gmail.com",
     "phone": "+380-97-332-82-10",
-    "url": "https://nazar-palamarchuk.netlify.app",
+    "url": "https://nazar-palamarchuk.com",
     "profiles": [
       { "network": "GitHub", "url": "https://github.com/nazar-pal" },
       { "network": "LinkedIn", "url": "https://linkedin.com/in/naz-pal" },
-      { "network": "Website", "url": "https://nazar-palamarchuk.netlify.app" }
+      { "network": "Website", "url": "https://nazar-palamarchuk.com" }
     ],
     "summary": "Full‑stack SaaS experience — from MVP to production deployment. TypeScript‑first approach — designing type‑safe architectures across all projects. AI‑powered feature integration in mobile and web apps. Global engineering experience working with international teams at Boeing.",
     "coreHighlights": [
