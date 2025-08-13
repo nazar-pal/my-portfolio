@@ -1,3 +1,4 @@
+import { env } from '@/env'
 import { ImageResponse } from 'next/og'
 
 export const size = {
@@ -8,6 +9,13 @@ export const size = {
 export const contentType = 'image/png'
 
 export default function Image() {
+  const hostname = (() => {
+    try {
+      return new URL(env.NEXT_PUBLIC_SITE_URL).hostname.replace(/^www\./, '')
+    } catch {
+      return 'nazar-palamarchuk.com'
+    }
+  })()
   const gradient =
     'linear-gradient(135deg, oklch(0.65 0.25 264), oklch(0.7 0.2 280))'
   return new ImageResponse(
@@ -67,7 +75,7 @@ export default function Image() {
               fontFamily: 'sans-serif'
             }}
           >
-            nazarpal.dev
+            {hostname}
           </div>
         </div>
       </div>

@@ -1,7 +1,8 @@
 import { env } from '@/env'
 import type { Metadata, Viewport } from 'next'
 import { DM_Sans, Space_Grotesk } from 'next/font/google'
-import Script from 'next/script'
+
+import { Analytics } from '@vercel/analytics/next'
 import type React from 'react'
 import './globals.css'
 
@@ -54,14 +55,29 @@ export const metadata: Metadata = {
     siteName: 'Nazar Palamarchuk',
     locale: 'en_US',
     type: 'website',
-    images: [`${siteUrl}/opengraph-image`]
+    images: [
+      {
+        url: `${siteUrl}/opengraph-image`,
+        alt: 'Nazar Palamarchuk — Full Stack Web, Mobile, and AI Developer',
+        width: 1200,
+        height: 630,
+        type: 'image/png'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Nazar Palamarchuk | Full Stack Developer',
     description:
       'Full Stack Web, Mobile, and AI Developer based in Lviv, Ukraine',
-    images: [`${siteUrl}/opengraph-image`]
+    images: [
+      {
+        url: `${siteUrl}/opengraph-image`,
+        alt: 'Nazar Palamarchuk — Full Stack Web, Mobile, and AI Developer',
+        width: 1200,
+        height: 630
+      }
+    ]
   },
   robots: {
     index: true,
@@ -95,6 +111,8 @@ export default function RootLayout({
     url: siteUrl,
     image: `${siteUrl}/images/nazar-profile.jpg`,
     sameAs: [env.NEXT_PUBLIC_GITHUB_URL, env.NEXT_PUBLIC_LINKEDIN_URL],
+    email: `mailto:${env.NEXT_PUBLIC_CONTACT_EMAIL}`,
+    telephone: env.NEXT_PUBLIC_CONTACT_PHONE_E164,
     jobTitle: 'Full Stack Developer',
     address: {
       '@type': 'PostalAddress',
@@ -131,20 +149,17 @@ export default function RootLayout({
     >
       <body className="bg-background min-h-screen">
         {children}
-        <Script
+        <Analytics />
+        <script
           id="ld-json-person"
           type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify(personLdJson)}
-        </Script>
-        <Script
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personLdJson) }}
+        />
+        <script
           id="ld-json-website"
           type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify(websiteLdJson)}
-        </Script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLdJson) }}
+        />
       </body>
     </html>
   )
