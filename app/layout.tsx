@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: '%s | Nazar Palamarchuk'
   },
   description:
-    'Full Stack Web, Mobile, and AI Developer based in Lviv, Ukraine. Specializing in React, Next.js, React Native, TypeScript, and AI integration.',
+    'Full Stack Web and Mobile Developer with AI Expertise based in Lviv, Ukraine. Specializing in React, Next.js, React Native, TypeScript, and AI integration.',
   keywords: [
     'Full Stack Developer',
     'React',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Nazar Palamarchuk | Full Stack Developer',
     description:
-      'Full Stack Web, Mobile, and AI Developer based in Lviv, Ukraine',
+      'Full Stack Web and Mobile Developer with AI Expertise based in Lviv, Ukraine',
     url: siteUrl,
     siteName: 'Nazar Palamarchuk',
     locale: 'en_US',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${siteUrl}/opengraph-image`,
-        alt: 'Nazar Palamarchuk — Full Stack Web, Mobile, and AI Developer',
+        alt: 'Nazar Palamarchuk — Full Stack Web and Mobile Developer with AI Expertise',
         width: 1200,
         height: 630,
         type: 'image/png'
@@ -69,11 +69,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Nazar Palamarchuk | Full Stack Developer',
     description:
-      'Full Stack Web, Mobile, and AI Developer based in Lviv, Ukraine',
+      'Full Stack Web and Mobile Developer with AI Expertise based in Lviv, Ukraine',
     images: [
       {
         url: `${siteUrl}/opengraph-image`,
-        alt: 'Nazar Palamarchuk — Full Stack Web, Mobile, and AI Developer',
+        alt: 'Nazar Palamarchuk — Full Stack Web and Mobile Developer with AI Expertise',
         width: 1200,
         height: 630
       }

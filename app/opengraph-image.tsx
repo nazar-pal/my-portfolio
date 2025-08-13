@@ -64,7 +64,7 @@ export default function Image() {
               textAlign: 'center'
             }}
           >
-            Full Stack Web, Mobile, and AI Developer
+            Full Stack Web and Mobile Developer with AI Expertise
           </div>
           <div
             style={{
